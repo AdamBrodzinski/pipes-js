@@ -24,9 +24,9 @@ function stripChars(str, pattern) {
 
 
 var res = '555 121-7878'
-|> stripChars '-'
-|> stripChars(' ')
 |> stripChars '.'
+|> stripChars ' '
+|> stripChars('-')
 
 // ->  "5551217878"
 
