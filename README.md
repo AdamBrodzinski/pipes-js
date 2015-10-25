@@ -19,11 +19,11 @@ function stripChars(str, pattern) {
 ```javascript
 // trim and capitalize are lo-dash functions
 
-'hello-world ' |> trim |> stripChars('-') |> capitalize
+var res = 'hello-world ' |> trim |> stripChars('-') |> capitalize
 // ->  "Hello world"
 
 
-var res = '555 121-7878'
+var res2 = '555 121-7878'
 |> stripChars '.'
 |> stripChars ' '
 |> stripChars('-')
@@ -31,7 +31,7 @@ var res = '555 121-7878'
 // ->  "5551217878"
 
 
-result = ['555-111-3333', '555-222-4444', '555-333-5555']
+var result = ['555-111-3333', '555-222-4444', '555-333-5555']
 |> map (num) => stripChars(num, '-')
 |> inspect
 |> take 2
@@ -54,8 +54,10 @@ npm install pipes-loader      # not published yet
 ```
 
 ```
-var res = _chain('555 121-7878')
+var res = _.chain('555 121-7878')
 .pipesCall(stripChars('-'))
 .pipesCall(stripChars(' '))
-.pipesCall(stripChars('.')).value()
+.pipesCall(stripChars('.')).value();
+
+console.log(res);
 ```
