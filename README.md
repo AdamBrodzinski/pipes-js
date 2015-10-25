@@ -32,7 +32,7 @@ var res = '555 121-7878'
 
 
 result = ['555-111-3333', '555-222-4444', '555-333-5555']
-|> map (num) -> stripChars(num, '-')
+|> map (num) => stripChars(num, '-')
 |> inspect
 |> take 2
 
