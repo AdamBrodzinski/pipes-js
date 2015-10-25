@@ -39,3 +39,23 @@ result = ['555-111-3333', '555-222-4444', '555-333-5555']
 // log ['5551113333', '5552224444', '5553335555']
 // ->  ['5551113333', '5552224444']
 ```
+
+#### Compile to de-sugar into Lo-Dash methods
+Run the files through the compiler or webpack-loader.
+
+```bash
+npm install pipes-js  # not published yet
+pipesjs watch foo.js bar.js
+```
+or via webpack loader:
+
+```bash
+npm install pipes-loader      # not published yet
+```
+
+```
+var res = _chain('555 121-7878')
+.pipes.call(stripChars('-'))
+.pipes.call(stripChars(' '))
+.pipes.call(stripChars('.')).value()
+```
