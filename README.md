@@ -17,17 +17,30 @@ function stripChars(str, pattern) {
 
 #### Use functions like Unix pipes
 ```elixir
+// trim and capitalize are lo-dash functions
+
+'hello-world ' |> trim |> stripChars('-') |> capitalize
+// ->  "Hello world"
+
+
+var res = '555 121-7878'
+|> stripChars('-')
+|> stripChars(' ')
+|> stripChars('.')
+
+// ->  "5551217878"
+```
+
+#### All lodash methods are pipe-able
+```elixir
 # use functions like unix pipe
 
-"hello world " |> String.trim |> String.uppercase
-#>>> "HELLO WORLD"
-
-["foo", "bar ", " baz"]
-|> Enum.map (x) -> String.upcase(x)
+result = ["foo", "bar ", " baz"]
+|> map (x) -> String.upcase(x)
 |> inspect
 |> take 2
 
-# log ["FOO", "BAR", "BAZ"]
-# >>> ["FOO", "BAR"]
+// log ["FOO", "BAR", "BAZ"]
+// ->  ["FOO", "BAR"]
 ```
 
