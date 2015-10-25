@@ -55,7 +55,7 @@ npm install pipes-loader      # not published yet
 
 ```
 var res = _chain('555 121-7878')
-.pipes.call(stripChars('-'))
-.pipes.call(stripChars(' '))
-.pipes.call(stripChars('.')).value()
+.pipesCall(stripChars('-'))
+.pipesCall(stripChars(' '))
+.pipesCall(stripChars('.')).value()
 ```
