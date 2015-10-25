@@ -16,7 +16,7 @@ function stripChars(str, pattern) {
 ```
 
 #### Use functions like Unix pipes
-```elixir
+```javascript
 // trim and capitalize are lo-dash functions
 
 'hello-world ' |> trim |> stripChars('-') |> capitalize
@@ -29,18 +29,13 @@ var res = '555 121-7878'
 |> stripChars('.')
 
 // ->  "5551217878"
-```
 
-#### All lodash methods are pipe-able
-```elixir
-# use functions like unix pipe
 
-result = ["foo", "bar ", " baz"]
-|> map (x) -> String.upcase(x)
+result = ['555-111-3333', '555-222-4444', '555-333-5555']
+|> map (num) -> stripChars(num, '-')
 |> inspect
 |> take 2
 
-// log ["FOO", "BAR", "BAZ"]
-// ->  ["FOO", "BAR"]
+// log ['5551113333', '5552224444', '5553335555']
+// ->  ['5551113333', '5552224444']
 ```
-
