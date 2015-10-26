@@ -53,11 +53,12 @@ or via webpack loader:
 npm install pipes-loader      # not published yet
 ```
 
-```
+```javascript
 var res = _.chain('555 121-7878')
-.pipesCall(stripChars('-'))
-.pipesCall(stripChars(' '))
-.pipesCall(stripChars('.')).value();
+.pipesCall(stripChars, '.')
+.pipesCall(stripChars, ' ')
+.pipesCall(stripChars, '-').value();
 
 console.log(res);
+// ->  "5551217878"
 ```
